@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -21,9 +22,10 @@ class ProductService(val productPort: ProductPort) {
         return ResponseEntity.status(HttpStatus.CREATED).build()
     }
 
-    @GetMapping
-    fun getProduct(productId: Long): GetProductResponse {
+    @GetMapping("/{productId}")
+    fun getProduct(@PathVariable productId: Long): ResponseEntity<GetProductResponse> {
         val product:Product = productPort.getProduct(productId)
-        return GetProductResponse(product.id,product.name,product.price,product.discountPolicy)
+        val response = GetProductResponse(product.id,product.name,product.price,product.discountPolicy)
+        return ResponseEntity.ok(response)
     }
 }

@@ -12,7 +12,7 @@ class Product (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0L
-    var name:String = ""
-    var price:Int = 0
-    var discountPolicy: DiscountPolicy = DiscountPolicy.NONE
+    var name:String = name
+    var price:Int = price
+    var discountPolicy: DiscountPolicy = discountPolicy
 }

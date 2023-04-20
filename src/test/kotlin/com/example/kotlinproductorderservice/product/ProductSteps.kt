@@ -24,5 +24,13 @@ class ProductSteps {
                 .then()
                 .log().all().extract()
         }
+
+        fun 상품조회요청(productId:Long): ExtractableResponse<Response>{
+            return RestAssured.given().log().all()
+                .`when`()
+                .get("/products/{productId}",productId)
+                .then().log().all()
+                .extract()
+        }
     }
 }
