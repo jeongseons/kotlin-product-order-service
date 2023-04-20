@@ -2,19 +2,14 @@ package com.example.kotlinproductorderservice.product
 
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
 
+@SpringBootTest
 class ProductServiceTest {
 
+    @Autowired
     lateinit var productService: ProductService
-    lateinit var productPort: ProductPort
-    lateinit var productRepository: ProductRepository
-
-    @BeforeEach
-    fun setUp() {
-        productRepository = ProductRepository()
-        productPort = ProductAdapter(productRepository)
-        productService = ProductService(productPort)
-    }
 
     @Test
     fun 상품등록() {
@@ -28,7 +23,5 @@ class ProductServiceTest {
         val discountPolicy = DiscountPolicy.NONE
         return AddProductRequest(name, price, discountPolicy)
     }
-
-
 
 }
