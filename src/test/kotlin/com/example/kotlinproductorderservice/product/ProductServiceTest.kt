@@ -1,31 +1,34 @@
 package com.example.kotlinproductorderservice.product
 
-import org.assertj.core.api.Assert
-import org.assertj.core.api.AssertionsForClassTypes.assertThat
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class ProductServiceTest {
 
-    lateinit var productService:ProductServcie
+    lateinit var productService: ProductService
+    lateinit var productPort: ProductPort
+    lateinit var productRepository: ProductRepository
+
+    @BeforeEach
+    fun setUp() {
+        productRepository = ProductRepository()
+        productPort = ProductAdapter(productRepository)
+        productService = ProductService(productPort)
+    }
 
     @Test
     fun 상품등록() {
-        val name = "상품명"
-        val price = 1000
-        val discountPolicy = DiscountPolicy.NONE
-        val request = AddProductRequest(name, price, discountPolicy)
-
+        val request = 상품등록요청_생성()
         productService.addProduct(request)
     }
 
-    private data class AddProductRequest(
-        var name:String = "",
-        var price:Int = 0,
-        var discountPolicy: DiscountPolicy = DiscountPolicy.NONE
-    )
-
-    private enum class DiscountPolicy {
-        NONE
+    fun 상품등록요청_생성(): AddProductRequest {
+        val name = ""
+        val price = 1000
+        val discountPolicy = DiscountPolicy.NONE
+        return AddProductRequest(name, price, discountPolicy)
     }
+
+
 
 }
