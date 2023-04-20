@@ -1,10 +1,19 @@
 package com.example.kotlinproductorderservice.order
 
+import com.example.kotlinproductorderservice.product.DiscountPolicy
 import com.example.kotlinproductorderservice.product.Product
 import org.springframework.util.Assert
+import javax.persistence.*
 
+@Entity
+@Table(name = "orders")
 class Order(product: Product, quantity: Int) {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id = 0L
+    @OneToOne
+    var product = product
+    var quantity = quantity
     fun assignId(id: Long) {
         this.id = id
     }
