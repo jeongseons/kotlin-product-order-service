@@ -32,5 +32,21 @@ class ProductSteps {
                 .then().log().all()
                 .extract()
         }
+
+        fun 상품수정요청_생성():UpdateProductRequest{
+            return UpdateProductRequest("상품 수정",2000,DiscountPolicy.NONE)
+        }
+
+        fun 상품수정요청(productId: Long):ExtractableResponse<Response> {
+            val response = RestAssured.given().log().all()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(ProductSteps.상품수정요청_생성())
+                .`when`()
+                .patch("/products/{productId}", productId)
+                .then()
+                .log().all().extract()
+            return response
+        }
+
     }
 }
