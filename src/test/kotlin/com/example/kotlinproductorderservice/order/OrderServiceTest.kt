@@ -1,9 +1,9 @@
 package com.example.kotlinproductorderservice.order
 
 import com.example.kotlinproductorderservice.order.OrderSteps.Companion.상품주문요청_생성
-import com.example.kotlinproductorderservice.product.ProductService
+import com.example.kotlinproductorderservice.order.application.service.OrderService
+import com.example.kotlinproductorderservice.product.application.service.ProductService
 import com.example.kotlinproductorderservice.product.ProductSteps
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest

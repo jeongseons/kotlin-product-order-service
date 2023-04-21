@@ -1,13 +1,14 @@
-package com.example.kotlinproductorderservice.payment
+package com.example.kotlinproductorderservice.payment.adapter
 
-import com.example.kotlinproductorderservice.order.Order
-import com.example.kotlinproductorderservice.order.OrderRepository
-import com.example.kotlinproductorderservice.product.DiscountPolicy
-import com.example.kotlinproductorderservice.product.Product
+import com.example.kotlinproductorderservice.order.domain.Order
+import com.example.kotlinproductorderservice.order.adapter.OrderRepository
+import com.example.kotlinproductorderservice.payment.domain.Payment
+import com.example.kotlinproductorderservice.payment.application.port.PaymentPort
 import org.springframework.stereotype.Component
 
 @Component
-class PaymentAdapter(paymentGateway: PaymentGateway, paymentRepository: PaymentRepository, orderRepository: OrderRepository) : PaymentPort {
+class PaymentAdapter(paymentGateway: PaymentGateway, paymentRepository: PaymentRepository, orderRepository: OrderRepository) :
+    PaymentPort {
     var paymentGateway = paymentGateway
     var paymentRepository = paymentRepository
     var orderRepository = orderRepository

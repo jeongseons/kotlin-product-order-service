@@ -1,5 +1,6 @@
 package com.example.kotlinproductorderservice.order
 
+import com.example.kotlinproductorderservice.order.application.service.CreateOrderRequest
 import io.restassured.RestAssured
 import io.restassured.response.ExtractableResponse
 import io.restassured.response.Response
@@ -15,7 +16,7 @@ class OrderSteps {
         }
 
         @JvmStatic
-        fun 상품주문요청(request:CreateOrderRequest): ExtractableResponse<Response> {
+        fun 상품주문요청(request: CreateOrderRequest): ExtractableResponse<Response> {
             return RestAssured.given().log().all()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(request)

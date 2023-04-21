@@ -1,5 +1,6 @@
-package com.example.kotlinproductorderservice.product
+package com.example.kotlinproductorderservice.product.application.service
 
+import com.example.kotlinproductorderservice.product.domain.DiscountPolicy
 import org.springframework.util.Assert
 
 data class UpdateProductRequest(var name: String, var price: Int, var discountPolicy: DiscountPolicy) {

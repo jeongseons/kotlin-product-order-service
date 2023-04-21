@@ -3,11 +3,8 @@ package com.example.kotlinproductorderservice.product
 import com.example.kotlinproductorderservice.ApiTest
 import com.example.kotlinproductorderservice.product.ProductSteps.Companion.상품수정요청
 import com.example.kotlinproductorderservice.product.ProductSteps.Companion.상품조회요청
-import io.restassured.RestAssured
-import io.restassured.response.ExtractableResponse
-import io.restassured.response.Response
+import com.example.kotlinproductorderservice.product.adapter.ProductRepository
 import org.junit.jupiter.api.Test
-import org.springframework.http.MediaType
 import org.springframework.http.HttpStatus
 import org.assertj.core.api.AssertionsForClassTypes.assertThat
 import org.springframework.beans.factory.annotation.Autowired

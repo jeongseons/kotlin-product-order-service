@@ -1,7 +1,6 @@
-package com.example.kotlinproductorderservice.payment
+package com.example.kotlinproductorderservice.payment.domain
 
-import com.example.kotlinproductorderservice.order.Order
-import jdk.nashorn.internal.objects.annotations.Getter
+import com.example.kotlinproductorderservice.order.domain.Order
 import org.springframework.util.Assert
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

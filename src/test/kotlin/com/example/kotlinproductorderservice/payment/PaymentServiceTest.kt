@@ -1,9 +1,10 @@
 package com.example.kotlinproductorderservice.payment
 
-import com.example.kotlinproductorderservice.order.OrderService
+import com.example.kotlinproductorderservice.order.application.service.OrderService
 import com.example.kotlinproductorderservice.order.OrderSteps
 import com.example.kotlinproductorderservice.payment.PaymentSteps.Companion.주문결제요청_생성
-import com.example.kotlinproductorderservice.product.ProductService
+import com.example.kotlinproductorderservice.payment.application.service.PaymentService
+import com.example.kotlinproductorderservice.product.application.service.ProductService
 import com.example.kotlinproductorderservice.product.ProductSteps
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

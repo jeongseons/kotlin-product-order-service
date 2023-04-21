@@ -1,4 +1,4 @@
-package com.example.kotlinproductorderservice.payment
+package com.example.kotlinproductorderservice.payment.application.service
 
 import org.springframework.util.Assert
 

@@ -1,7 +1,6 @@
-package com.example.kotlinproductorderservice.order
+package com.example.kotlinproductorderservice.order.domain
 
-import com.example.kotlinproductorderservice.product.DiscountPolicy
-import com.example.kotlinproductorderservice.product.Product
+import com.example.kotlinproductorderservice.product.domain.Product
 import org.springframework.util.Assert
 import javax.persistence.*
 

@@ -1,8 +1,7 @@
-package com.example.kotlinproductorderservice.product
+package com.example.kotlinproductorderservice.product.domain
 
 import org.springframework.util.Assert
 import javax.persistence.*
-import kotlin.jvm.Throws
 
 @Entity
 @Table(name="products")

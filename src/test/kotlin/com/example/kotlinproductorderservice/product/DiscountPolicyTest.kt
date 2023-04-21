@@ -1,5 +1,6 @@
 package com.example.kotlinproductorderservice.product
 
+import com.example.kotlinproductorderservice.product.domain.DiscountPolicy
 import org.assertj.core.api.AssertionsForClassTypes.assertThat
 import org.junit.jupiter.api.Test
 

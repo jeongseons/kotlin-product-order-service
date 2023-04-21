@@ -1,5 +1,8 @@
 package com.example.kotlinproductorderservice.product
 
+import com.example.kotlinproductorderservice.product.application.service.AddProductRequest
+import com.example.kotlinproductorderservice.product.application.service.UpdateProductRequest
+import com.example.kotlinproductorderservice.product.domain.DiscountPolicy
 import io.restassured.RestAssured
 import io.restassured.response.ExtractableResponse
 import io.restassured.response.Response
@@ -37,8 +40,8 @@ class ProductSteps {
         }
 
         @JvmStatic
-        fun 상품수정요청_생성():UpdateProductRequest{
-            return UpdateProductRequest("상품 수정",2000,DiscountPolicy.NONE)
+        fun 상품수정요청_생성(): UpdateProductRequest {
+            return UpdateProductRequest("상품 수정",2000, DiscountPolicy.NONE)
         }
 
         @JvmStatic
