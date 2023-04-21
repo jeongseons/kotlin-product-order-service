@@ -13,6 +13,10 @@ class Payment(order: Order, cardNumber: String) {
         this.id = id
     }
 
+    fun getPrice():Int {
+        return order.getTotalPrice()
+    }
+
     init {
         Assert.notNull(order, "주문은 필수입니다")
         Assert.hasText(cardNumber, "카드 번호는 필수입니다")

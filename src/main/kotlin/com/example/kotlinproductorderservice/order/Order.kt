@@ -14,12 +14,16 @@ class Order(product: Product, quantity: Int) {
     @OneToOne
     var product = product
     var quantity = quantity
-    fun assignId(id: Long) {
-        this.id = id
+    fun getTotalPrice(): Int {
+        return product.getDiscountedPrice() * quantity
     }
 
     init {
         Assert.notNull(product, "상품은 필수입니다")
         Assert.isTrue(quantity > 0, "수량은 0보다 커야 합니다")
+    }
+
+    fun assignId(id: Long) {
+        this.id = id
     }
 }

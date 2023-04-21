@@ -12,8 +12,8 @@ class PaymentAdapter(paymentGateway: PaymentGateway, paymentRepository: PaymentR
         return Order(Product("상품1", 1000, DiscountPolicy.NONE), 2)
     }
 
-    override fun pay(payment: Payment) {
-        paymentGateway.excute(payment)
+    override fun pay(totalPrice: Int, cardNumber: String) {
+        paymentGateway.excute(totalPrice, cardNumber)
     }
 
     override fun save(payment: Payment) {

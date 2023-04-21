@@ -20,6 +20,10 @@ class Product (
         this.discountPolicy = discountPolicy
     }
 
+    fun getDiscountedPrice(): Int {
+        return discountPolicy.applyDiscount(price)
+    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

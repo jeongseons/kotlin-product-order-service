@@ -15,4 +15,13 @@ class ProductTest {
         assertThat(product.price).isEqualTo(2000)
     }
 
+    @Test
+    fun update2(){
+        val product = Product("상품명",1000,DiscountPolicy.NONE)
+
+        val discountedPrice = product.getDiscountedPrice()
+
+        assertThat(discountedPrice).isEqualTo(1000)
+    }
+
 }

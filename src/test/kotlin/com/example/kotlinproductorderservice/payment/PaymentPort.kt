@@ -4,6 +4,6 @@ import com.example.kotlinproductorderservice.order.Order
 
 interface PaymentPort {
     fun getOrder(orderId: Long): Order
-    fun pay(payment: Payment)
+    fun pay(totalPrice:Int, cardNumber:String)
     fun save(payment: Payment)
 }
