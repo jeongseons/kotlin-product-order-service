@@ -5,7 +5,6 @@ import com.example.kotlinproductorderservice.order.OrderSteps
 import com.example.kotlinproductorderservice.payment.PaymentSteps.Companion.주문결제요청_생성
 import com.example.kotlinproductorderservice.product.ProductService
 import com.example.kotlinproductorderservice.product.ProductSteps
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
