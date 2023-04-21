@@ -1,7 +1,9 @@
 package com.example.kotlinproductorderservice.payment
 
 import com.example.kotlinproductorderservice.order.Order
+import org.springframework.stereotype.Component
 
+@Component
 class PaymentService(paymentPort: PaymentPort) {
     val paymentPort = paymentPort
     fun payment(request: PaymentRequest) {

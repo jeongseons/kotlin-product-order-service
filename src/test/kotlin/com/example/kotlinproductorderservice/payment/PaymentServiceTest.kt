@@ -1,25 +1,32 @@
 package com.example.kotlinproductorderservice.payment
 
+import com.example.kotlinproductorderservice.order.OrderService
+import com.example.kotlinproductorderservice.order.OrderSteps
 import com.example.kotlinproductorderservice.payment.PaymentSteps.Companion.주문결제요청_생성
+import com.example.kotlinproductorderservice.product.ProductService
+import com.example.kotlinproductorderservice.product.ProductSteps
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.SpringBootTest
 
+@SpringBootTest
 class PaymentServiceTest {
 
+    @Autowired
     lateinit var paymentService: PaymentService
 
-    lateinit var paymentPort: PaymentPort
+    @Autowired
+    lateinit var productService: ProductService
 
-    @BeforeEach
-    fun setUp() {
-        val paymentGateway = ConsolePaymentGateway()
-        val paymentRepository = PaymentRepository()
-        paymentPort = PaymentAdapter(paymentGateway, paymentRepository)
-        paymentService = PaymentService(paymentPort)
-    }
+    @Autowired
+    lateinit var orderService: OrderService
 
     @Test
     fun 상품주문() {
+        productService.addProduct(ProductSteps.상품등록요청_생성())
+        orderService.createOrder(OrderSteps.상품주문요청_생성())
+
         val request = 주문결제요청_생성()
 
         paymentService.payment(request)
